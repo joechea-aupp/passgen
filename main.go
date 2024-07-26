@@ -1,16 +1,24 @@
 package main
 
 import (
+	"flag"
 	"fmt"
-
-	"github.com/tjarratt/babble"
+	"os"
 )
 
 func main() {
-	babbler := babble.NewBabbler()
-	fmt.Println(babbler.Babble())
+	cmdFlag := flag.NewFlagSet("cmdFlag", flag.ExitOnError)
 
-	// optionally set your own separater
-	babbler.Separator = "~"
-	fmt.Println(babbler.Babble())
+	sep := cmdFlag.String("sep", "-", "a separator to use between words")
+	n := cmdFlag.Int("n", 3, "the number of words to generate, must be greater than or equal to 2")
+
+	cmdFlag.Parse(os.Args[1:])
+
+	passgen, error := generateWords(*n, *sep)
+
+	if error != nil {
+		fmt.Println(error)
+	} else {
+		fmt.Println(passgen)
+	}
 }
