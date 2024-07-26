@@ -9,7 +9,7 @@ import (
 
 func generateWords(n int, sep string) (string, error) {
 	if n < 2 {
-		return "", errors.New("n must be greater than or equal to 2")
+		return "", errors.New("[ERR] -n must be greater than or equal to 2")
 	}
 	// instanciate the babbler
 	babbler := babble.NewBabbler()
