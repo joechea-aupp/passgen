@@ -4,7 +4,7 @@ make sure you have `wamerican` or `wbritish` installed on your system, you can i
 sudo apt-get install wamerican
 ```
 
-download the built binary from the release page and move it to your bin directory
+download the built binary from the release page and move it to your bin directory [release page](https://github.com/joechea-aupp/passgen/releases)
 
 ### Usage
 By default, passgen will generate 5 words with `-` as separator, generate password will automatically copy to clipboard.
