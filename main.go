@@ -48,7 +48,7 @@ func main() {
 
 	defer func() {
 		if error == nil {
-			fmt.Println("Generated and copied to clipboard:", pass)
+			fmt.Println(pass)
 			clipboard.WriteAll(pass)
 			os.Exit(0)
 		}
